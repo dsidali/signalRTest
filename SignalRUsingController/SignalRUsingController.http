@@ -1,0 +1,6 @@
+@SignalRUsingController_HostAddress = http://localhost:5151
+
+GET {{SignalRUsingController_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

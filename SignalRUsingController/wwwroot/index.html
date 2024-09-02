@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SignalR Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.0/signalr.min.js"></script>
+</head>
+<body>
+<h1>SignalR Client</h1>
+<script type="text/javascript">
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("https://localhost:7188/chat-hub")
+        .build();
+
+    connection.on("ReceiveMessage", function (user, message) {
+        console.log(user + " says " + message);
+    });
+
+    connection.start().then(function () {
+        console.log("Connected to the hub");
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+</script>
+</body>
+</html>
