@@ -6,6 +6,7 @@ namespace signalRTest
     {
         public override async Task OnConnectedAsync()
         {
+        //this is a comment
             await Clients.All.SendAsync("ReceiveMessage", $"{Context.ConnectionId} is here");
         }
     }
